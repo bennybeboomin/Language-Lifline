@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Language Lifeline — Protect Endangered Languages</title>
+  <meta name="description" content="A volunteer club raising awareness and sharing interviews about endangered languages around the world." />
+  <meta name="theme-color" content="#0f766e" />
+  <meta property="og:title" content="Language Lifeline — Protect Endangered Languages" />
+  <meta property="og:description" content="We raise awareness, collect interviews, and support communities preserving endangered languages." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://dummyimage.com/1200x630/0f766e/ffffff&text=Language+Lifeline" />
+  <style>
+    :root{
+      --bg: #0b0f14;
+      --panel: #0e1723;
+      --muted: #93a3b5;
+      --text: #e6edf3;
+      --brand: #0f766e; /* teal */
+      --brand-2: #22c55e; /* green accent */
+      --accent: #f59e0b; /* amber */
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(2, 6, 23, .35);
+      --maxw: 1100px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; color:var(--text); background: radial-gradient(1200px 600px at 10% -10%, rgba(34,197,94,.08), transparent), radial-gradient(900px 500px at 110% 10%, rgba(15,118,110,.15), transparent), var(--bg)}
+    a{color:inherit}
+
+    /* Layout */
+    .wrap{max-width:var(--maxw); margin-inline:auto; padding: 0 20px}
+    header{position:sticky; top:0; backdrop-filter: saturate(1.1) blur(8px); background: color-mix(in oklab, var(--bg) 82%, transparent); border-bottom:1px solid color-mix(in oklab, var(--panel) 80%, #fff 5%); z-index:10}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:10px; text-decoration:none}
+    .brand svg{width:34px; height:34px}
+    .brand b{font-weight:800; letter-spacing:.3px}
+    .nav a{opacity:.9}
+    .navlinks{display:flex; gap:18px; align-items:center}
+    .btn{display:inline-flex; align-items:center; gap:10px; text-decoration:none; background:linear-gradient(135deg, var(--brand), #2dd4bf); color:white; padding:10px 14px; border-radius: 100px; font-weight:700; box-shadow: var(--shadow); border:0}
+    .btn:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+    .btn.ghost{background:transparent; border:1px solid color-mix(in oklab, var(--brand) 60%, white 10%); color: var(--text); box-shadow:none}
+
+    /* Hero */
+    .hero{padding: 56px 0 28px}
+    .hero-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center}
+    .kicker{display:inline-flex; align-items:center; gap:8px; font-weight:700; color:#a7f3d0; background: color-mix(in oklab, var(--brand) 20%, transparent); border:1px solid color-mix(in oklab, var(--brand) 40%, white 10%); padding:6px 10px; border-radius:100px}
+    h1{font-size: clamp(32px, 4.5vw, 54px); line-height:1.05; margin:12px 0 10px}
+    .lead{font-size: clamp(16px, 1.8vw, 20px); color: var(--muted); max-width: 62ch}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+
+    .hero-card{padding:20px; background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 85%, white 3%), color-mix(in oklab, var(--panel) 92%, white 8%)); border-radius: var(--radius); border:1px solid color-mix(in oklab, var(--panel) 78%, white 6%); box-shadow: var(--shadow)}
+    .hero-illus{aspect-ratio:1/1; display:grid; place-items:center}
+
+    /* Sections */
+    section{padding: 36px 0}
+    h2{font-size: clamp(24px, 3vw, 34px); margin:0 0 10px}
+    .sub{color:var(--muted); margin-bottom:18px; max-width:70ch}
+
+    .grid{display:grid; gap:16px}
+    .grid.cards{grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))}
+    .card{background: linear-gradient(180deg, color-mix(in oklab, var(--panel) 85%, white 3%), color-mix(in oklab, var(--panel) 92%, white 8%)); border:1px solid color-mix(in oklab, var(--panel) 78%, white 6%); border-radius: var(--radius); padding:18px; box-shadow: var(--shadow)}
+    .stat{font-size: clamp(28px, 4vw, 40px); font-weight:800}
+
+    /* Interviews */
+    .filters{display:flex; flex-wrap:wrap; gap:10px; margin: 6px 0 16px}
+    .filters input, .filters select{background:#0b1420; border:1px solid #1f2a37; border-radius: 12px; padding:10px 12px; color:var(--text)}
+    .card .thumb{width:100%; aspect-ratio: 16/9; border-radius: 12px; object-fit:cover; background:#0b1420; border:1px solid #1f2a37; }
+    .tag{display:inline-flex; align-items:center; gap:6px; border:1px solid #1f2a37; border-radius:999px; padding:4px 9px; color:#93e5d5; margin-right:6px; font-size:12px}
+    .actions{display:flex; gap:10px; flex-wrap:wrap}
+    .actions .btn{padding:8px 12px}
+
+    /* Footer */
+    footer{padding:28px 0; border-top:1px solid color-mix(in oklab, var(--panel) 78%, white 6%); color:var(--muted)}
+
+    /* Responsive */
+    @media (max-width: 880px){
+      .hero-grid{grid-template-columns: 1fr}
+      .hero-illus{order:-1}
+      .navlinks{display:none}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Language Lifeline",
+    "url":"https://example.org",
+    "logo":"https://dummyimage.com/512x512/0f766e/ffffff&text=LL",
+    "sameAs": ["https://github.com/YOUR-ORG-HERE"]
+  }
+  </script>
+</head>
+<body>
+<a class="skip" href="#main" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+<header>
+  <div class="wrap nav" role="navigation" aria-label="Main">
+    <a class="brand" href="#home" aria-label="Language Lifeline home">
+      <!-- Simple logo -->
+      <svg viewBox="0 0 64 64" role="img" aria-label="Logo"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#0f766e"/></linearGradient></defs><rect x="4" y="4" width="56" height="56" rx="14" fill="url(#g)"/><path d="M16 42c8-2 12-8 16-16 2-4 6-8 12-10" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+      <b>Language Lifeline</b>
+    </a>
+    <nav class="navlinks" aria-label="Site">
+      <a href="#mission">Mission</a>
+      <a href="#interviews">Interviews</a>
+      <a href="#get-involved">Get involved</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="#get-involved">Join the effort</a>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-grid">
+      <div>
+        <span class="kicker">Grassroots • Community • Respect</span>
+        <h1>Protect endangered languages and amplify community voices</h1>
+        <p class="lead">We raise awareness about language endangerment, record and share interviews, and support community-led preservation. Explore first-hand stories, learn why it matters, and find simple ways you can help.</p>
+        <div class="cta">
+          <a class="btn" href="#interviews">Browse interviews</a>
+          <a class="btn ghost" href="#mission">Learn more</a>
+        </div>
+      </div>
+      <div class="hero-card hero-illus" aria-hidden="true">
+        <!-- Decorative globe with speech marks -->
+        <svg viewBox="0 0 300 300" width="100%" height="100%">
+          <defs>
+            <radialGradient id="glow" cx="50%" cy="40%" r="70%">
+              <stop offset="0%" stop-color="#22c55e" stop-opacity="0.9"/>
+              <stop offset="60%" stop-color="#0f766e" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#0e1723" stop-opacity="0.2"/>
+            </radialGradient>
+          </defs>
+          <circle cx="150" cy="150" r="110" fill="url(#glow)"/>
+          <g fill="none" stroke="#d1fae5" stroke-opacity=".6">
+            <ellipse cx="150" cy="150" rx="95" ry="40"/>
+            <ellipse cx="150" cy="150" rx="60" ry="100"/>
+            <circle cx="150" cy="150" r="80"/>
+          </g>
+          <g fill="#fff">
+            <path d="M88 120c12-6 28 1 28 14v8c0 13-16 20-28 14l-5 10c-2 3-7 2-7-2v-49c0-4 5-5 7-2l5 7z" opacity=".9"/>
+            <path d="M199 160c12-6 28 1 28 14v8c0 13-16 20-28 14l-5 10c-2 3-7 2-7-2v-49c0-4 5-5 7-2l5 7z" opacity=".9"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION / WHY IT MATTERS -->
+  <section id="mission">
+    <h2>Why this work matters</h2>
+    <p class="sub">When a language fades, so do histories, knowledge systems, and unique ways of seeing the world. Our club partners with speakers and community groups to document stories, share interviews, and mobilize support for revitalization initiatives.</p>
+    <div class="grid cards" role="list">
+      <article class="card" role="listitem" aria-label="Community-first">
+        <div class="stat">Community‑first</div>
+        <p>We center consent, collaboration, and benefit to speakers. Materials are shared only with permission.</p>
+      </article>
+      <article class="card" role="listitem" aria-label="Open access">
+        <div class="stat">Open access</div>
+        <p>Interviews are published for learning and advocacy, with clear context and attributions.</p>
+      </article>
+      <article class="card" role="listitem" aria-label="Actionable">
+        <div class="stat">Actionable</div>
+        <p>Each story includes ways to help—donate to local orgs, volunteer, or simply learn and share.</p>
+      </article>
+      <article class="card" role="listitem" aria-label="Respectful">
+        <div class="stat">Respectful</div>
+        <p>We avoid extractive approaches. Speakers approve edits and can retract at any time.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- INTERVIEWS -->
+  <section id="interviews">
+    <h2>Interviews & Stories</h2>
+    <p class="sub">Browse our growing library. Use filters to find a language, region, or media type. Everything here is placeholder data—replace it with your own in the <code>interviews</code> array below.</p>
+
+    <div class="filters" role="region" aria-label="Filters">
+      <input id="q" type="search" placeholder="Search by title, language, speaker…" aria-label="Search" />
+      <select id="langFilter" aria-label="Filter by language"></select>
+      <select id="typeFilter" aria-label="Filter by type">
+        <option value="">All types</option>
+        <option>Video</option>
+        <option>Audio</option>
+        <option>Text</option>
+      </select>
+      <button class="btn ghost" id="clearFilters" type="button" aria-label="Clear filters">Clear</button>
+    </div>
+
+    <div id="results" class="grid cards" role="list"></div>
+  </section>
+
+  <!-- GET INVOLVED -->
+  <section id="get-involved">
+    <h2>Get involved</h2>
+    <p class="sub">Three simple ways to help right now.</p>
+    <div class="grid cards">
+      <article class="card">
+        <h3>Share a story</h3>
+        <p>Do you or someone you know want to record an interview? Use the contact form to reach us and we’ll coordinate safely and respectfully.</p>
+        <div class="actions"><a class="btn" href="#contact">Contact us</a></div>
+      </article>
+      <article class="card">
+        <h3>Volunteer</h3>
+        <p>Transcribe, translate, edit audio, or help with outreach. Beginners welcome—training provided.</p>
+        <div class="actions"><a class="btn" href="mailto:hello@example.org?subject=Volunteer%20interest%20—%20Language%20Lifeline">Email to volunteer</a></div>
+      </article>
+      <article class="card">
+        <h3>Support local orgs</h3>
+        <p>We list community organizations alongside interviews. Donations go directly to them, not to us.</p>
+        <div class="actions"><a class="btn ghost" href="#interviews">Find an org</a></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT / NEWSLETTER -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p class="sub">Questions, feedback, or collaboration ideas? Email <a href="mailto:hello@example.org">hello@example.org</a>. To get occasional updates, add your email below.</p>
+    <form class="card" onsubmit="subscribe(event)" aria-label="Newsletter sign-up">
+      <label for="email">Email</label><br />
+      <input id="email" name="email" type="email" required placeholder="you@example.com" style="width:100%;max-width:420px;margin:.4rem 0;padding:10px 12px;border-radius:12px;border:1px solid #1f2a37;background:#0b1420;color:var(--text)">
+      <div style="height:10px"></div>
+      <button class="btn" type="submit">Subscribe</button>
+      <p id="thanks" style="display:none;color:#a7f3d0;margin-top:8px">Thanks! Check your inbox for a confirmation email.</p>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:space-between">
+      <small>© <span id="year"></span> Language Lifeline • A volunteer project.</small>
+      <small>Built with respect for communities and their rights.</small>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ========================
+// Replace these with your real interviews
+// Fields: id, title, language, speaker, type (Video|Audio|Text), url, date, summary, org, region, thumbnail
+// ========================
+const interviews = [
+  {
+    id: "itw-001",
+    title: "Reviving Ainu through community classes",
+    language: "Ainu",
+    speaker: "Haruka K.",
+    type: "Video",
+    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    date: "2024-03-11",
+    summary: "Haruka shares how elders and youth co-run weekly lessons and song circles.",
+    org: "Example Cultural Center",
+    region: "Hokkaidō, Japan",
+    thumbnail: "https://images.unsplash.com/photo-1520975922284-5f7f6a5684b5?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id: "itw-002",
+    title: "Gurindji kids interview their grandparents",
+    language: "Gurindji",
+    speaker: "Wanta J.",
+    type: "Audio",
+    url: "https://example.org/audio/gurindji-interview.mp3",
+    date: "2023-11-02",
+    summary: "On-country recording about words for kinship and waterholes.",
+    org: "Karungkarni Art & Culture",
+    region: "NT, Australia",
+    thumbnail: "https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=1200&auto=format&fit=crop"
+  },
+  {
+    id: "itw-003",
+    title: "Neighborhood radio in Mapuzugun",
+    language: "Mapuzugun",
+    speaker: "María P.",
+    type: "Text",
+    url: "https://example.org/stories/mapuzugun-radio",
+    date: "2025-02-18",
+    summary: "Transcript with photos from a weekly community broadcast.",
+    org: "Local Radio",
+    region: "Wallmapu (Chile/Argentina)",
+    thumbnail: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop"
+  }
+];
+
+// Build language filter options from data
+function initFilters(){
+  const langSelect = document.getElementById('langFilter');
+  const langs = Array.from(new Set(interviews.map(i => i.language))).sort();
+  langSelect.innerHTML = '<option value="">All languages</option>' + langs.map(l => `<option>${l}</option>`).join('');
+}
+
+// Render interview cards
+function render(list){
+  const wrap = document.getElementById('results');
+  if(!list.length){
+    wrap.innerHTML = '<p class="sub">No matches. Try clearing filters or another search.</p>';
+    return;
+  }
+  wrap.innerHTML = list.map(i => `
+    <article class="card" role="listitem" aria-labelledby="${i.id}-title">
+      <img class="thumb" src="${i.thumbnail || ''}" alt="Thumbnail for ${i.title}" loading="lazy" />
+      <h3 id="${i.id}-title" style="margin:.6rem 0 .2rem">${i.title}</h3>
+      <p class="sub" style="margin:0 0 .6rem">${i.summary}</p>
+      <div style="margin:.2rem 0 .6rem">
+        <span class="tag" title="Language">🗣️ ${i.language}</span>
+        <span class="tag" title="Type">🎧 ${i.type}</span>
+        <span class="tag" title="Region">📍 ${i.region}</span>
+      </div>
+      <p style="margin:.4rem 0 .8rem; color:var(--muted)">By ${i.speaker}${i.org ? ` • ${i.org}`: ''} • ${new Date(i.date).toLocaleDateString()}</p>
+      <div class="actions">
+        <a class="btn" href="${i.url}" target="_blank" rel="noopener">Open ${i.type}</a>
+        <a class="btn ghost" href="https://twitter.com/intent/tweet?text=${encodeURIComponent('Listening to: ' + i.title)}&url=${encodeURIComponent(i.url)}" target="_blank" rel="noopener">Share</a>
+      </div>
+    </article>
+  `).join('');
+}
+
+function applyFilters(){
+  const q = document.getElementById('q').value.toLowerCase().trim();
+  const lang = document.getElementById('langFilter').value;
+  const type = document.getElementById('typeFilter').value;
+  const filtered = interviews.filter(i => {
+    const inSearch = !q || [i.title, i.language, i.speaker, i.org, i.region].join(' ').toLowerCase().includes(q);
+    const langOk = !lang || i.language === lang;
+    const typeOk = !type || i.type === type;
+    return inSearch && langOk && typeOk;
+  });
+  render(filtered);
+}
+
+function subscribe(e){
+  e.preventDefault();
+  // This is a demo-only stub. For a live form, use Formspree, Basin, or your email provider.
+  const email = document.getElementById('email').value;
+  if(email.includes('@')){
+    document.getElementById('thanks').style.display = 'block';
+    e.target.reset();
+  }
+}
+
+// Wire up events
+window.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('year').textContent = new Date().getFullYear();
+  initFilters();
+  render(interviews);
+  document.getElementById('q').addEventListener('input', applyFilters);
+  document.getElementById('langFilter').addEventListener('change', applyFilters);
+  document.getElementById('typeFilter').addEventListener('change', applyFilters);
+  document.getElementById('clearFilters').addEventListener('click', () => {
+    document.getElementById('q').value = '';
+    document.getElementById('langFilter').value = '';
+    document.getElementById('typeFilter').value = '';
+    render(interviews);
+  });
+});
+</script>
+</body>
+</html>
