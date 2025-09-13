@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Language Lifeline — Keep Our Languages Alive</title>
+  <meta name="description" content="A grassroots volunteer club sharing stories and voices to help protect endangered languages." />
+  <meta name="theme-color" content="#0f766e" />
+  <meta property="og:title" content="Language Lifeline — Keep Our Languages Alive" />
+  <meta property="og:description" content="We listen, record, and share stories to support communities keeping their languages alive." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://dummyimage.com/1200x630/fafafa/0f766e&text=Language+Lifeline" />
+  <style>
+    :root{
+      --bg: #fafafa;
+      --panel: #ffffff;
+      --muted: #4b5563;
+      --text: #111827;
+      --brand: #0f766e; /* teal */
+      --brand-2: #22c55e; /* green accent */
+      --accent: #f59e0b; /* amber */
+      --radius: 14px;
+      --shadow: 0 4px 14px rgba(0,0,0,.08);
+      --maxw: 1000px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background: var(--bg);
+    }
+    a{color:inherit}
+
+    /* Layout */
+    .wrap{max-width:var(--maxw); margin-inline:auto; padding: 0 20px}
+    header{position:sticky; top:0; backdrop-filter: saturate(1.1) blur(8px); background: rgba(255,255,255,.9); border-bottom:1px solid #e5e7eb; z-index:10}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:10px; text-decoration:none; font-weight:700; font-size:18px}
+    .brand svg{width:32px; height:32px}
+    .navlinks{display:flex; gap:18px; align-items:center}
+    .nav a{opacity:.85}
+    .btn{display:inline-flex; align-items:center; gap:10px; text-decoration:none; background:var(--brand); color:white; padding:10px 16px; border-radius: var(--radius); font-weight:600; border:0; transition:.2s background}
+    .btn:hover{background:var(--brand-2)}
+    .btn:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+    .btn.ghost{background:transparent; border:1px solid var(--brand); color: var(--brand)}
+
+    /* Hero */
+    .hero{padding: 56px 0 28px}
+    .hero-grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:28px; align-items:center}
+    .kicker{display:inline-flex; align-items:center; gap:8px; font-weight:600; color:var(--brand); background: #d1fae5; padding:6px 10px; border-radius:100px}
+    h1{font-size: clamp(32px, 4.5vw, 50px); line-height:1.15; margin:12px 0 10px}
+    .lead{font-size: clamp(16px, 1.8vw, 20px); color: var(--muted); max-width: 62ch}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+
+    .hero-card{padding:20px; background: var(--panel); border-radius: var(--radius); border:1px solid #e5e7eb; box-shadow: var(--shadow); display:flex; align-items:center; justify-content:center}
+    .hero-illus{aspect-ratio:1/1; display:grid; place-items:center}
+
+    /* Sections */
+    section{padding: 40px 0}
+    h2{font-size: clamp(24px, 3vw, 34px); margin:0 0 10px}
+    .sub{color:var(--muted); margin-bottom:18px; max-width:70ch}
+
+    .grid{display:grid; gap:16px}
+    .grid.cards{grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))}
+    .card{background: var(--panel); border:1px solid #e5e7eb; border-radius: var(--radius); padding:18px; box-shadow: var(--shadow)}
+    .stat{font-size: 20px; font-weight:700; margin-bottom:6px}
+
+    /* Interviews */
+    .filters{display:flex; flex-wrap:wrap; gap:10px; margin: 6px 0 16px}
+    .filters input, .filters select{background:#fff; border:1px solid #d1d5db; border-radius: 10px; padding:10px 12px; color:var(--text)}
+    .card .thumb{width:100%; aspect-ratio: 16/9; border-radius: 12px; object-fit:cover; background:#f3f4f6; border:1px solid #e5e7eb; }
+    .tag{display:inline-flex; align-items:center; gap:6px; border:1px solid #e5e7eb; border-radius:999px; padding:4px 9px; background:#f0fdfa; color:var(--brand); margin-right:6px; font-size:12px}
+    .actions{display:flex; gap:10px; flex-wrap:wrap}
+    .actions .btn{padding:8px 12px}
+
+    /* Footer */
+    footer{padding:28px 0; border-top:1px solid #e5e7eb; color:var(--muted); font-size:14px}
+
+    /* Responsive */
+    @media (max-width: 880px){
+      .hero-grid{grid-template-columns: 1fr}
+      .hero-illus{order:-1}
+      .navlinks{display:none}
+    }
+    .skip:focus{position:static; width:auto; height:auto; clip:auto; padding:8px; background:#fff; border:1px solid #e5e7eb; border-radius:6px}
+  </style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <div class="wrap nav" role="navigation" aria-label="Main">
+    <a class="brand" href="#home" aria-label="Language Lifeline home">
+      <svg viewBox="0 0 64 64" role="img" aria-label="Logo"><rect x="4" y="4" width="56" height="56" rx="14" fill="#0f766e"/><path d="M16 42c8-2 12-8 16-16 2-4 6-8 12-10" stroke="#fff" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+      Language Lifeline
+    </a>
+    <nav class="navlinks" aria-label="Site">
+      <a href="#mission">Mission</a>
+      <a href="#interviews">Stories</a>
+      <a href="#get-involved">Get involved</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="#get-involved">Join us</a>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-grid">
+      <div>
+        <span class="kicker">🌱 Grassroots • Community • Respect</span>
+        <h1>Let’s keep our languages alive, together</h1>
+        <p class="lead">Every language carries stories, songs, and wisdom. We listen, record, and share so future generations can too. You don’t need to be an expert to help—just a caring human.</p>
+        <div class="cta">
+          <a class="btn" href="#interviews">Browse stories</a>
+          <a class="btn ghost" href="#mission">Why it matters</a>
+        </div>
+      </div>
+      <div class="hero-card hero-illus" aria-hidden="true">
+        <!-- Friendly decorative speech bubbles -->
+        <svg viewBox="0 0 200 200" width="100%" height="100%">
+          <circle cx="70" cy="80" r="50" fill="#d1fae5"/>
+          <circle cx="130" cy="120" r="50" fill="#a7f3d0"/>
+          <text x="55" y="85" font-size="24" fill="#0f766e">“Hi”</text>
+          <text x="110" y="125" font-size="24" fill="#0f766e">“Hola”</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION -->
+  <section id="mission">
+    <h2>Why this matters</h2>
+    <p class="sub">When a language fades, so do songs, stories, and whole ways of seeing the world. We work side by side with speakers to document and share, always with respect and permission.</p>
+    <div class="grid cards" role="list">
+      <article class="card" role="listitem">
+        <div class="stat">🤝 Community-first</div>
+        <p>We only record and publish what speakers want to share. They have full control.</p>
+      </article>
+      <article class="card" role="listitem">
+        <div class="stat">📖 Open access</div>
+        <p>Stories are free to read, listen to, or watch—always with context and credits.</p>
+      </article>
+      <article class="card" role="listitem">
+        <div class="stat">💡 Actionable</div>
+        <p>Each story comes with ways you can help—donate, volunteer, or simply spread the word.</p>
+      </article>
+      <article class="card" role="listitem">
+        <div class="stat">🌍 Respectful</div>
+        <p>We avoid extractive research. Speakers can edit or remove their stories anytime.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- INTERVIEWS -->
+  <section id="interviews">
+    <h2>Stories & Voices</h2>
+    <p class="sub">Explore our growing library. Use filters to find a language, region, or type of story.</p>
+
+    <div class="filters" role="region" aria-label="Filters">
+      <label for="q" class="visually-hidden">Search</label>
+      <input id="q" type="search" placeholder="Search by title, language, speaker…" />
+      <label for="langFilter" class="visually-hidden">Filter by language</label>
+      <select id="langFilter"></select>
+      <label for="typeFilter" class="visually-hidden">Filter by type</label>
+      <select id="typeFilter">
+        <option value="">All types</option>
+        <option>Video</option>
+        <option>Audio</option>
+        <option>Text</option>
+      </select>
+      <button class="btn ghost" id="clearFilters" type="button">Clear</button>
+    </div>
+
+    <div id="results" class="grid cards" role="list"></div>
+  </section>
+
+  <!-- GET INVOLVED -->
+  <section id="get-involved">
+    <h2>How you can help</h2>
+    <p class="sub">Small steps make a big difference.</p>
+    <div class="grid cards">
+      <article class="card">
+        <h3>📹 Share a story</h3>
+        <p>Know someone who’d like to record? Reach out and we’ll support them safely.</p>
+        <div class="actions"><a class="btn" href="#contact">Contact us</a></div>
+      </article>
+      <article class="card">
+        <h3>🙋 Volunteer</h3>
+        <p>Help with transcription, translation, or outreach. No experience needed—training provided.</p>
+        <div class="actions"><a class="btn" href="mailto:hello@example.org?subject=Volunteer%20interest%20—%20Language%20Lifeline">Email us</a></div>
+      </article>
+      <article class="card">
+        <h3>💚 Support local orgs</h3>
+        <p>Donations go straight to community organizations, not us. Find one that speaks to you.</p>
+        <div class="actions"><a class="btn ghost" href="#interviews">Browse orgs</a></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Stay in touch</h2>
+    <p class="sub">Questions, ideas, or feedback? Email <a href="mailto:hello@example.org">hello@example.org</a>. Or sign up for occasional updates:</p>
+    <form class="card" onsubmit="subscribe(event)">
+      <label for="email">Email</label><br />
+      <input id="email" name="email" type="email" required placeholder="you@example.com" style="width:100%;max-width:420px;margin:.4rem 0;padding:10px 12px;border-radius:12px;border:1px solid #d1d5db;">
+      <div style="height:10px"></div>
+      <button class="btn" type="submit">Subscribe</button>
+      <p id="thanks" style="display:none;color:var(--brand);margin-top:8px">Thanks! Check your inbox for a confirmation email.</p>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;align-items:center">
+    <small>© <span id="year"></span> Language Lifeline — Made with care by volunteers 💚</small>
+    <small>Respecting communities and their voices.</small>
+  </div>
+</footer>
+
+<script>
+const interviews = [
+  {
+    id: "itw-001",
+    title: "Reviving Ainu through community classes",
+    language: "Ainu",
+    speaker: "Haruka K.",
+    type: "Video",
+    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    date: "2024-03-11",
+    summary: "Haruka shares how elders and youth co-run weekly lessons and song circles.",
+    org: "Example Cultural Center",
+    region: "Hokkaidō, Japan",
+    thumbnail: "https://images.unsplash.com/photo-1520975922284-5f7f6a5684b5?q=80&w=600&auto=format&fit=crop"
+  },
+  {
+    id: "itw-002",
+    title: "Gurindji kids interview their grandparents",
+    language: "Gurindji",
+    speaker: "Wanta J.",
+    type: "Audio",
+    url: "https://example.org/audio/gurindji-interview.mp3",
+    date: "2023-11-02",
+    summary: "On-country recording about words for kinship and waterholes.",
+    org: "Karungkarni Art & Culture",
+    region: "NT, Australia",
+    thumbnail: "https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=600&auto=format&fit=crop"
+  },
+  {
+    id: "itw-003",
+    title: "Neighborhood radio in Mapuzugun",
+    language: "Mapuzugun",
+    speaker: "María P.",
+    type: "Text",
+    url: "https://example.org/stories/mapuzugun-radio",
+    date: "2025-02-18",
+    summary: "Transcript with photos from a weekly community broadcast.",
+    org: "Local Radio",
+    region: "Wallmapu (Chile/Argentina)",
+    thumbnail: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600&auto=format&fit=crop"
+  }
+];
+
+function initFilters(){
+  const langSelect = document.getElementById('langFilter');
+  const langs = Array.from(new Set(interviews.map(i => i.language))).sort();
+  langSelect.innerHTML = '<option value="">All languages</option>' + langs.map(l => `<option>${l}</option>`).join('');
+}
+
+function render(list){
+  const wrap = document.getElementById('results');
+  if(!list.length){
+    wrap.innerHTML = '<p class="sub">No matches. Try clearing filters or another search.</p>';
+    return;
+  }
+  wrap.innerHTML = list.map(i => `
+    <article class="card" role="listitem" aria-labelledby="${i.id}-title">
+      <img class="thumb" src="${i.thumbnail || ''}" alt="Thumbnail for ${i.title}" loading="lazy" />
+      <h3 id="${i.id}-title" style="margin:.6rem 0 .2rem">${i.title}</h3>
+      <p class="sub" style="margin:0 0 .6rem">${i.summary}</p>
+      <div style="margin:.2rem 0 .6rem">
+        <span class="tag">🗣️ ${i.language}</span>
+        <span class="tag">🎧 ${i.type}</span>
+        <span class="tag">📍 ${i.region}</span>
+      </div>
+      <p style="margin:.4rem 0 .8rem; color:var(--muted); font-size:14px">Speaker: ${i.speaker} • Org: ${i.org}</p>
+      <a class="btn" href="${i.url}" target="_blank" rel="noopener">Open</a>
+    </article>
+  `).join('');
+}
+
+function applyFilters(){
+  const q = document.getElementById('q').value.toLowerCase();
+  const lang = document.getElementById('langFilter').value;
+  const type = document.getElementById('typeFilter').value;
+  const filtered = interviews.filter(i =>
+    (!q || i.title.toLowerCase().includes(q) || i.language.toLowerCase().includes(q) || i.speaker.toLowerCase().includes(q) || i.org.toLowerCase().includes(q)) &&
+    (!lang || i.language === lang) &&
+    (!type || i.type === type)
+  );
+  render(filtered);
+}
+
+document.getElementById('q').addEventListener('input', applyFilters);
+document.getElementById('langFilter').addEventListener('change', applyFilters);
+document.getElementById('typeFilter').addEventListener('change', applyFilters);
+document.getElementById('clearFilters').addEventListener('click', () => {
+  document.getElementById('q').value='';
+  document.getElementById('langFilter').value='';
+  document.getElementById('typeFilter').value='';
+  render(interviews);
+});
+
+function subscribe(e){
+  e.preventDefault();
+  document.getElementById('thanks').style.display='block';
+}
+
+document.getElementById('year').textContent = new Date().getFullYear();
+initFilters();
+render(interviews);
+</script>
+</body>
+</html>
